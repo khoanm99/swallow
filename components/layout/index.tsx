@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Layout = ({ children} : any) => {
   return (
     <LayoutContainer>
-
+      {children}
     </LayoutContainer>
   )
 }

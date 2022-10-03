@@ -1,7 +1,17 @@
+import { SiteProvider } from '../context/appContext'
 import '../styles/globals.css'
+import theme from '../styles/theme';
+import { ThemeProvider } from 'styled-components'
+import { appWithTranslation } from 'next-i18next';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function Swallows({ Component, pageProps }) {
+  return ( 
+    <SiteProvider>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SiteProvider>
+  )
 }
 
-export default MyApp
+export default appWithTranslation(Swallows)
